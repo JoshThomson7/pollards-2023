@@ -11,7 +11,6 @@
 footer {
     position: relative;
     background: var(--fl1-primary);
-    background: linear-gradient(150deg, rgba(54, 73, 84,1) 65%, rgba(54, 73, 84,1) 90%, rgba(54, 73, 84,1) 100%);
     background-repeat: no-repeat;
     background-position: bottom center;
     background-size: 100%;
@@ -139,37 +138,6 @@ footer {
                 }
             }
         }
-
-        .footer__social { 
-            display: flex;
-            justify-content: flex-end;
-
-            ul { 
-                display: flex;
-                justify-content: flex-end;
-
-                li {
-                    margin-left: 16px;
-                    a {
-                        svg {
-                            height: 24px;
-                            path { 
-                                transition: all 0.3s ease;
-                                fill: #fff;
-                            }
-                        }
-
-                        &:hover {
-                            svg {
-                                path { 
-                                    fill: $primary;
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
     }
 
     .footer__menus {
@@ -197,6 +165,23 @@ footer {
                 @include breakpoint(1024px){margin-top: 30px;}
 
                 img{max-width: 160px;}
+            }
+
+            &.footer__social { 
+                display: flex;
+    
+                ul { 
+                    display: flex;
+                    justify-content: flex-end;
+    
+                    li {
+                        margin-left: 16px;
+
+                        a {
+                            i{color: #fff}
+                        }
+                    }
+                }
             }
 
             @include breakpoint(papabear) {
@@ -258,7 +243,7 @@ footer {
                     line-height: 24px;
                     font-size: 14px;
                     padding-bottom: 8px;
-                    color: var(--fl1-border);
+                    color: #fff;
                     display: flex;
                     @include breakpoint(papabear) {
                         padding-bottom: 10px;
@@ -279,7 +264,7 @@ footer {
 
                     a {
                         font-size: 14px;
-                        color: var(--fl1-border);
+                        color: #fff;
                         &:hover {
                             color: var(--fl1-white);
                             opacity: 1;

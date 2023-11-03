@@ -184,7 +184,7 @@ class FC_Helpers {
 
                     $section_dots_separator = '';
                     if($option_dots_separator) {
-                        $section_dots_separator = '<div class="fc-dots-separator"><span class="quaternary"></span><span class="tertiary"></span><span class="secondary"></span><span class="primary"></span></div>';
+                        $section_dots_separator = '<div class="fc-dots-separator"><span class="primary"></span><span class="secondary"></span><span class="primary"></span></div>';
                     }
 
                     $html .= '<div class="fc-layout-heading'.$centre_heading.'">';

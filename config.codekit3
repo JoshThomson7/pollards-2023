@@ -201,6 +201,22 @@
       "oAP" : "\/core\/fl1-helpers.php",
       "oF" : 0
     },
+    "\/fonts\/fa\/fa-brands-400.ttf" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/fonts\/fa\/fa-brands-400.ttf",
+      "oF" : 0
+    },
+    "\/fonts\/fa\/fa-brands-400.woff2" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/fonts\/fa\/fa-brands-400.woff2",
+      "oF" : 0
+    },
     "\/fonts\/fa\/fa-duotone-900.ttf" : {
       "cB" : 0,
       "ft" : 8192,
@@ -397,19 +413,6 @@
       "plM" : 52780316221407,
       "prP" : 0
     },
-    "\/img\/feature-tabs.jpg" : {
-      "ft" : 16384,
-      "iS" : 248654,
-      "jF" : 0,
-      "oA" : 0,
-      "oAP" : "\/img\/feature-tabs.jpg",
-      "oF" : 0,
-      "oIPL" : 0,
-      "opt" : 0,
-      "ou" : "lpckwebp-none",
-      "q" : 100,
-      "rq" : 75
-    },
     "\/img\/ISO-Inverted.png" : {
       "ft" : 32768,
       "iS" : 28853,
@@ -423,44 +426,15 @@
       "q" : 100,
       "rq" : 75
     },
-    "\/img\/KCM-Logo.jpg" : {
-      "ft" : 16384,
-      "iS" : 9923,
-      "jF" : 0,
-      "oA" : 0,
-      "oAP" : "\/img\/KCM-Logo.jpg",
+    "\/img\/logo.svg" : {
+      "ft" : 2097152,
+      "miP" : 0,
+      "oA" : 2,
+      "oAP" : "\/img\/logo.svg",
       "oF" : 0,
-      "oIPL" : 0,
       "opt" : 0,
-      "ou" : "lpckwebp-none",
-      "q" : 100,
-      "rq" : 75
-    },
-    "\/img\/logo.png" : {
-      "ft" : 32768,
-      "iS" : 45134,
-      "oA" : 0,
-      "oAP" : "\/img\/logo.png",
-      "oF" : 0,
-      "oIPL" : 0,
-      "opt" : 0,
-      "oT" : 1,
-      "ou" : "lpckwebp-none",
-      "q" : 100,
-      "rq" : 75
-    },
-    "\/img\/old-logo.png" : {
-      "ft" : 32768,
-      "iS" : 11347,
-      "oA" : 0,
-      "oAP" : "\/img\/old-logo.png",
-      "oF" : 0,
-      "oIPL" : 0,
-      "opt" : 0,
-      "oT" : 1,
-      "ou" : "lpckwebp-none",
-      "q" : 100,
-      "rq" : 75
+      "plM" : 52780316221407,
+      "prP" : 0
     },
     "\/img\/select-arrow-down-white.png" : {
       "ft" : 32768,
@@ -2799,6 +2773,21 @@
       "pg" : 0,
       "sct" : 0
     },
+    "\/scss\/fonts\/_brands.scss" : {
+      "aP" : 0,
+      "bl" : 0,
+      "co" : 0,
+      "dP" : 10,
+      "ec" : 1,
+      "ft" : 4,
+      "ma" : 0,
+      "oA" : 1,
+      "oAP" : "\/scss\/fonts\/_brands.css",
+      "oF" : 0,
+      "oS" : 0,
+      "pg" : 0,
+      "sct" : 0
+    },
     "\/scss\/fonts\/_duotone.scss" : {
       "aP" : 0,
       "bl" : 0,
@@ -3267,7 +3256,7 @@
   },
   "projectAttributes" : {
     "creationDate" : 652874357.77309203,
-    "displayValue" : "kcm-2023",
+    "displayValue" : "pollards-2023",
     "displayValueWasSetByUser" : 0,
     "iconImageName" : "brackets-koamaru",
     "iconImageWasSetByUser" : 0

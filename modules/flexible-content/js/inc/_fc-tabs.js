@@ -20,13 +20,13 @@ jQuery(document).ready(function($) {
         var activeTab = $(this).find('a').attr('data-id');
         parent.find('.' + activeTab).show();
 
-        if(window.innerWidth <= 900) {
-            var destination = $('.'+activeTab).offset().top;
+        // if(window.innerWidth <= 900) {
+        //     var destination = $('.'+activeTab).offset().top;
 
-            $("html:not(:animated),body:not(:animated)").animate({
-                scrollTop: destination - 170
-            }, 800);
-        }
+        //     $("html:not(:animated),body:not(:animated)").animate({
+        //         scrollTop: destination - 170
+        //     }, 800);
+        // }
 
         return false;
     });

@@ -5,6 +5,7 @@
     <title><?php wp_title( ' - ', true, 'right' ); ?></title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" href="https://cdn.fontawesome.com/6.0.0-beta2/css/all.min.css">
     <?php wp_head(); ?>
 </head>
 
@@ -28,7 +29,7 @@
                         <div class="header__main--left">
                             <div class="logo">
                                 <a href="<?php echo esc_url(home_url()); ?>" title="<?php bloginfo('name'); ?>">
-                                    <img src="<?php echo esc_url(get_stylesheet_directory_uri().'/img/KCM-Logo.jpg'); ?>" alt="<?php bloginfo('name'); ?>"/>
+                                    <img src="<?php echo esc_url(get_stylesheet_directory_uri().'/img/logo.svg'); ?>" alt="<?php bloginfo('name'); ?>"/>
                                 </a>
                             </div>
 

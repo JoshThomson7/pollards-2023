@@ -174,7 +174,7 @@ class FL1_Admin {
     }
 
     public function fl1_footer_admin()  {
-        echo '<span style="display:flex; align-items:center;"><i class="dashicons dashicons-editor-code" style="margin:0 3px;font-size:16px;line-height:21px;" title="Developed"></i> with <i class="dashicons dashicons-heart" style="margin:0 3px;font-size:16px;line-height:21px;" title="love"></i> by <a href="https://fl1.digital" title="FL1 Digital" target="_blank"><img src="'.get_stylesheet_directory_uri().'/img/fl1-icon.svg" style="width:22px; margin:3px 3px 0 5px;"></a> using <i class="dashicons dashicons-wordpress-alt" style="margin:0 3px;font-size:16px;line-height:21px;" title="WordPress"></i></span>';
+        echo '<span style="display:flex; align-items:center;"><i class="dashicons dashicons-editor-code" style="margin:0 3px;font-size:16px;line-height:21px;" title="Developed"></i> with <i class="dashicons dashicons-heart" style="margin:0 3px;font-size:16px;line-height:21px;" title="love"></i> by TWS using <i class="dashicons dashicons-wordpress-alt" style="margin:0 3px;font-size:16px;line-height:21px;" title="WordPress"></i></span>';
     }
 
     public function remove_core_menus() {
