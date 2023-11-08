@@ -50,20 +50,23 @@
 				img { 
 					width: auto;
 				}
+
+				i{color: $secondary; font-size: 24px;}
 			}
 
 			h5 {
 				padding: 8px 0 0;
 				margin-bottom: 0;
-				font-size: var(--fl1-font-sm);
+				font-size: var(--fl1-font-md);
 				color: var(--fl1-primary);
 				font-weight: 600;
 				text-align: center;
 				span {
-					font-weight: 400;
+					font-weight: 600;
 					font-size: var(--fl1-font-xxs);
 					color: var(--fl1-text-light);
 					display: block;
+					margin-top: 5px;
 				}
 			}
 

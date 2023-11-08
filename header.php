@@ -5,7 +5,7 @@
     <title><?php wp_title( ' - ', true, 'right' ); ?></title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     <meta name="format-detection" content="telephone=no">
-    <link rel="stylesheet" href="https://cdn.fontawesome.com/6.0.0-beta2/css/all.min.css">
+    <script src="https://kit.fontawesome.com/f6f8cbf1c2.js" crossorigin="anonymous"></script>
     <?php wp_head(); ?>
 </head>
 

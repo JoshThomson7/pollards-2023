@@ -1,11 +1,10 @@
 <?php
+
 /**
  * Team
  */
 
-$team_type = get_sub_field('type');
 $no_bios = get_sub_field('no_bios');
-
 $args = array(
 	'post_type'         => 'team',
 	'post_status'       => 'publish',
@@ -15,9 +14,15 @@ $args = array(
 	'fields'			=> 'ids',
 );
 
-if($team_type === 'custom') {
-	$team = get_sub_field('team_custom') ?? array();
-	$args['post__in'] = $team;
+if (get_sub_field('type') === 'custom') {
+	$args['post__in'] = get_sub_field('team_custom') ?? array(0);
+}
+
+$team_carousel = get_sub_field('team_carousel');
+if($team_carousel) {
+    $team_carousel_class[] = 'team_carousel';
+} else {
+	$team_carousel_class[] = 'team__wrap';
 }
 
 $team_query = new WP_Query($args);
@@ -25,64 +30,83 @@ $team = $team_query->posts;
 $team_total = $team_query->post_count;
 ?>
 
-<div class="team__wrap">
-    <?php
-        foreach($team as $team_id):
-			$_team = new TLC_Team($team_id);
-        	$member_id = preg_replace("#[^A-Za-z0-9]#", "", $_team->name());
-    ?>
-        <article data-image-list="<?php echo $_team->image(400, 400)['url']; ?>">
-			<div class="padder">
-				<a <?php echo !$no_bios ? 'href="#'.$member_id.'"' : ''; ?>" title="<?php echo $_team->name(); ?>" class="<?php echo !$no_bios ? 'team__modal' : ''; ?>">
-					<img src="<?php echo $_team->image(400, 400)['url']; ?>" alt="<?php echo $_team->name(); ?>" />
-				</a>
-				<h5><?php echo $_team->name(); ?><span><?php echo $_team->job_title(); ?></span></h5>
-			</div>
-        </article>
-    <?php endforeach; ?>
-</div><!-- team__wrap -->
-
-<div class="team__popup__holder">
+<div class="team__wrap <?php echo join(' ', $team_carousel_class); ?>">
 	<?php
-		$team_count = 1;
+	foreach ($team as $team_id) :
 
-		foreach($team as $team_id):
-			$_team = new TLC_Team($team_id);
-			$member_id = preg_replace("#[^A-Za-z0-9]#", "", $_team->name());
+		$member = new FL1C_Team_Member($team_id);
+		$member_id = preg_replace("#[^A-Za-z0-9]#", "", $member->name());
+		$member_image = $member->image(400, 400);
+		$member_image_url = $member_image ? $member_image['url'] : "";
+		$member_name = $member->name();
+
 	?>
-		<div id="<?php echo $member_id; ?>" class="team__popup">
+		<article data-image-list="<?php echo $member_image_url; ?>">
+			<div class="padder">
+				<a <?php echo !$no_bios ? 'href="#' . $member_id . '"' : ''; ?> title="<?php echo $member_name; ?>" class="<?php echo !$no_bios ? 'team__modal' : ''; ?>">
+					<img src="<?php echo $member_image_url ?>" alt="<?php echo $member_name; ?>" />
+				</a>
+				<h5><?php echo $member_name ?><span><?php echo $member->job_title(); ?></span></h5>
 
-			<div class="team__popup__img">
-				<img src="<?php echo $_team->image(600, 700)['url']; ?>" alt="<?php echo $_team->name(); ?>" />
-			</div><!-- team__popup__img -->
-
-			<div class="team__popup__content">
-				<div class="team__popup__nav">
-					<ul>
-						<li<?php if($team_count == 1): ?> class="inactive"<?php endif; ?>><a href="#" class="team__switch team__prev"><i class="fa-regular fa-chevron-left"></i></a></li>
-						<li<?php if($team_count == $team_total): ?> class="inactive"<?php endif; ?>><a href="#" class="team__switch team__next"><i class="fa-regular fa-chevron-right"></i></a></li>
-						<li><a href="#" class="team__close"><i class="fa-regular fa-times"></i></a></li>
-					</ul>
-				</div><!-- team__popup__nav -->
-
-				<h3><?php echo $_team->name(); ?> <span><?php echo $_team->job_title(); ?></span></h3>
-
-				<?php if($_team->email()): ?>
-					<div class="team__popup__icon">
-						<i class="fa-regular fa-envelope"></i>
-						<?php echo FL1_Helpers::hide_email($_team->email()); ?>
-					</div>
+				<?php if (!$no_bios) : ?>
+					<a href="#<?php echo $member_id; ?>" title="<?php echo $member_name ?>" class="team__modal plus">
+						<i class="fa-regular fa-plus"></i>
+					</a>
 				<?php endif; ?>
+			</div>
+		</article>
+	<?php endforeach; ?>
+</div>
 
-				<?php if($_team->phone()): ?>
-					<div class="team__popup__icon">
-						<i class="fa-regular fa-phone"></i>
-						<a href="tel:<?php echo $_team->phone(); ?>" target="_blank"><?php echo $_team->phone(); ?></a>
+<?php if (!$no_bios) : ?>
+	<div class="team__popup__holder">
+		<?php
+		$i = 1;
+		foreach ($team as $team_id) :
+			$member = new FL1C_Team_Member($team_id);
+			$member_id = preg_replace("#[^A-Za-z0-9]#", "", $member->name());
+			$member_image = $member->image(600, 700);
+			$member_image_url = $member_image ? $member_image['url'] : "";
+			$member_name = $member->name();
+			$member_email = $member->email();
+			$member_phone = $member->phone();
+		?>
+			<div id="<?php echo $member_id; ?>" class="team__popup">
+
+				<div class="team__popup__img">
+					<img src="<?php echo $member_image_url ?>" alt="<?php echo $member_name; ?>" />
+				</div>
+
+				<div class="team__popup__content">
+
+					<div class="team__popup__nav">
+						<ul>
+							<li <?php if ($i == 1) : ?> class="inactive" <?php endif; ?>><a href="#" class="team__switch team__prev"><i class="fa-regular fa-chevron-left"></i></a></li>
+							<li <?php if ($i == $team_total) : ?> class="inactive" <?php endif; ?>><a href="#" class="team__switch team__next"><i class="fa-regular fa-chevron-right"></i></a></li>
+							<li><a href="#" class="team__close"><i class="fa-regular fa-times"></i></a></li>
+						</ul>
 					</div>
-				<?php endif; ?>
 
-				<?php echo $_team->bio(); ?>
-			</div><!-- team__popup__content -->
-		</div><!-- team__popup -->
-	<?php $team_count++; endforeach; ?>
-</div><!-- team__popup__holder -->
+					<h3><?php echo $member_name; ?> <span><?php echo $member->job_title(); ?></span></h3>
+
+					<?php if ($member_email) : ?>
+						<div class="team__popup__icon">
+							<i class="fa-regular fa-envelope"></i>
+							<?php echo FL1_Helpers::hide_email($member_email); ?>
+						</div>
+					<?php endif; ?>
+
+					<?php if ($member_phone) : ?>
+						<div class="team__popup__icon">
+							<i class="fa-regular fa-phone"></i>
+							<a href="tel:<?php echo $member_phone; ?>" target="_blank"><?php echo $member_phone; ?></a>
+						</div>
+					<?php endif; ?>
+
+					<?php echo $member->bio(); ?>
+				</div>
+			</div>
+		<?php $i++;
+		endforeach; ?>
+	</div>
+<?php endif; ?>

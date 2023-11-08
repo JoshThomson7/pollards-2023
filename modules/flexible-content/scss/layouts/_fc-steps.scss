@@ -27,6 +27,7 @@
             .inner { 
                 padding: 30px;
                 display: flex;
+                align-items: center;
 
                 .fc_step-count { 
                     width: 40px;
@@ -52,7 +53,6 @@
                         color: var(--fl1-primary);
                         line-height: 29px;
                         font-weight: 700;
-						margin-bottom: var(--fl1-spacing-xs);
                     }
 
                     p { 

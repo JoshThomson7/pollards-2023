@@ -22,9 +22,10 @@ class FC_Helpers {
             $wave = get_field('fc_wave_separator', $fc_id);
             $theme = get_field('theme_colour', $fc_id);
             $has_wave = $wave ? 'has-wave' : '';
+            $overlap = get_field('fc_overlap') ? ' fc-overlap' : '';
 
-            if(!$fc_id) {
-                echo '<div class="flexible__content">';
+            if (!$fc_id) {
+                echo '<div id="flexible_content" class="flexible__content' . $overlap . '">';
             }
 
             while(have_rows('fc_content_types', $fc_id)) {
@@ -92,7 +93,18 @@ class FC_Helpers {
         $padding_style .= !empty($padding['fc_padding_bottom']) ? ' '.$padding['fc_padding_bottom'].'px' : ' 0';
         $padding_style .= !empty($padding['fc_padding_left']) ? ' '.(($padding['fc_padding_left']*100)/1200).'%' : ' 0';
 
+        $background = $fc_styles['fc_background'];
+        $background_constrain = $fc_styles['fc_background_constrain'];
+
         $style[] = $padding_style;
+
+        if ($background) {
+            if ($background_constrain) {
+                $max_width_classes[] = 'fc-bg-theme--' . $background . ' fc-bg-constrain';
+            } else {
+                $layout_container_classes[] = 'fc-bg-theme--' . $background;
+            }
+        }
 
         // Background class
         $ellipse_divider = $fc_styles['fc_ellipse_divider'];

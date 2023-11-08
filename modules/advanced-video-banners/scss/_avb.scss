@@ -266,11 +266,11 @@ section.avb {
 		/// No Banner
 		&.avb-empty {
 			.avb-banner {
-				min-height: 260px;
-				padding: 20px 0 60px;
+				min-height: 100px;
+				padding: 40px 0;
 
 				.avb-banner__caption {
-					padding-bottom: 20px;
+					padding-bottom: 0px;
 
 					&-wrap {
 						width: 60%;

@@ -161,18 +161,20 @@ $fc_bk_colours: (
 );
 
 @each $key, $fc_bk_colour in $fc_bk_colours {
-    .fc-bk-#{$key} {
-        .fc-layout-bk {
-            background-color: $fc_bk_colour;
-        }
+    .fc-bg-theme--#{$key} {
+        background-color: $fc_bk_colour;
 
-        &.fc-layout-bk-btm-gradient {
-            background: linear-gradient(
-                0deg,
-                rgba(darken($fc_bk_colour, 15%), 0.9262079831932774) 0%,
-                rgba(255, 255, 255, 0) 100%
-            );
-        }
+        // .fc-layout-bk {
+        //     background-color: $fc_bk_colour;
+        // }
+
+        // &.fc-layout-bk-btm-gradient {
+        //     background: linear-gradient(
+        //         0deg,
+        //         rgba(darken($fc_bk_colour, 15%), 0.9262079831932774) 0%,
+        //         rgba(255, 255, 255, 0) 100%
+        //     );
+        // }
 
         @if $key == primary or $key == dark {
             .fc-layout-heading {

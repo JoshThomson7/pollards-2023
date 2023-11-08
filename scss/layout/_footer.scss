@@ -168,20 +168,24 @@ footer {
             }
 
             &.footer__social { 
-                display: flex;
+                // display: flex;
     
                 ul { 
                     display: flex;
-                    justify-content: flex-end;
+                    // justify-content: flex-end;
     
                     li {
-                        margin-left: 16px;
+                        // margin-left: 16px;
 
                         a {
-                            i{color: #fff}
+                            i{color: #fff; font-size: 26px; margin-right: 20px;}
                         }
                     }
                 }
+            }
+
+            &.footer_qr{
+                img{max-width: 120px;}
             }
 
             @include breakpoint(papabear) {
@@ -196,7 +200,7 @@ footer {
             }
 
             h5 {
-                font-size: 14px;
+                font-size: 22px;
                 font-weight: 700;
                 color: #fff;
                 padding-bottom: 16px;

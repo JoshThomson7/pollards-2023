@@ -52,7 +52,17 @@ class FC_Public {
             if(get_field('fc_wave_separator')) {
                 $classes[] = 'page-has-wave-separator';
             }
+
+            $fc = get_field('fc_content_types', $post_id);
+			$fc_bg = $fc[0]['fc_styles']['fc_background'];
+			if($fc_bg) {
+				$classes[] = 'fc-background-'.$fc_bg;
+			}
         }
+
+        if(get_field('fc_overlap', $post->ID)) {
+			$classes[] = 'fc-overlap';
+		}
         
         return $classes;
     }

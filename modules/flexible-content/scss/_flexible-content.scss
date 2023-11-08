@@ -4,6 +4,37 @@
 
 @import 'fc-tab-scrollbar';
 
+body.fc-overlap {
+	.fc-layout:first-child {
+		padding-top: var(--fl1-spacing-sm);
+
+		&:before {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 108px;
+			background: var(--fl1-primary);
+			z-index: 0;
+		}
+
+		.fc-layout-container { 
+			background: none;
+		}
+	}
+
+	section.avb {
+		.avb-banners {
+			.avb-banner {
+				&:after { 
+					background: var(--fl1-primary);
+				}
+			}
+		}
+	}
+}
+
 .flexible__content {
 	position: relative;
 	z-index: 1;
