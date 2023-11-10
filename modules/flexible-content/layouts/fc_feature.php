@@ -6,6 +6,10 @@ $attachment_id = get_sub_field('feature_image');
 $feature_text_width = '';
 $feature_image_gif = get_sub_field('feature_image_gif');
 $image_size = 'full';
+$new_tab = '';
+if(get_sub_field('new_tab')){
+    $new_tab = ' target="_blank"';
+}
 
 if($attachment_id) {
     $crop = get_sub_field('feature_image_crop') ?? false;
@@ -55,7 +59,7 @@ if($feature_image_gif){
 
         <?php if(get_sub_field('feature_link_text') && get_sub_field('feature_link_url')): ?>
             <div class="feature__action">
-                <a href="<?php the_sub_field('feature_link_url'); ?>" class="button primary">
+                <a href="<?php the_sub_field('feature_link_url'); ?>" class="button primary" <?php echo $new_tab; ?>>
                     <span><?php the_sub_field('feature_link_text'); ?></span>
                 </a>
             </div><!-- feature__action -->

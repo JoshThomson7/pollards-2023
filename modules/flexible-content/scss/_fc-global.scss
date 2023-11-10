@@ -224,7 +224,13 @@ $fc_bk_colours: (
         } @else if $key == secondary {
             .fc-layout-heading {
                 h5 {
-                    color: darken($secondary, 45%);
+                    color: #fff;
+                }
+
+                h2{color: #fff;}
+
+                .fc-dots-separator{
+                    .secondary{background: #fff;}
                 }
             }
 
