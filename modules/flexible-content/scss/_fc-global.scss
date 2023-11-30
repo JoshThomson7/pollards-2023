@@ -248,6 +248,8 @@ $fc_bk_colours: (
             .fc-free-text{
                 p{color: #fff;}
             }
+        } @else if $key == white {
+
         }
     }
 }

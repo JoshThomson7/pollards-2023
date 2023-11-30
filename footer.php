@@ -27,6 +27,7 @@
 							21 Cross Square,<br> Wakefield<br> WF1 1PQ
 						</li>
 						<li><i class="fa-light fa-phone"></i> 01924 373 697</li>
+						<li><i class="fa-light fa-envelope"></i> info@pollardsopticians.co.uk</li>
 					</ul>
 				</article>
 

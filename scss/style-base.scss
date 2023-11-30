@@ -51,3 +51,18 @@
 .free-primary{
   padding: 20px 10px; background: $primary; color: white!important; border-radius: 16px
 }
+
+.social-icons{
+  display: flex;
+    
+      li {
+
+          a {
+              i{color: #fff; font-size: 26px; margin-right: 20px;}
+
+              &:hover{
+                i{color: $secondary;}
+              }
+          }
+      }
+  }
